@@ -8,6 +8,14 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class TelegramUserRepository {
   constructor(private readonly prismaService: PrismaService) { }
 
+  public async findByExternalId(externalUserId: string): Promise<TelegramUser | null> {
+    return this.prismaService.telegramUser.findUnique({
+      where: {
+        telegramUserId: externalUserId,
+      },
+    });
+  }
+
   public async create(createTelegramUser: CreateTelegramUserRequestDto): Promise<TelegramUser> {
     const { userId, telegramUserId } = createTelegramUser;
 

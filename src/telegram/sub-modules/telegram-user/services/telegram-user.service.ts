@@ -10,4 +10,8 @@ export class TelegramUserService {
   public async create(createTelegramUser: CreateTelegramUserRequestDto): Promise<TelegramUserResponseDto> {
     return this.telegramUserRepository.create(createTelegramUser);
   }
+
+  public async findByExternalId(externalUserId: string): Promise<TelegramUserResponseDto | null> {
+    return this.telegramUserRepository.findByExternalId(externalUserId);
+  }
 }
