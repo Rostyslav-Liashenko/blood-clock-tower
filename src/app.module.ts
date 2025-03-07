@@ -8,4 +8,4 @@ import { TelegramModule } from './telegram/telegram.module';
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
