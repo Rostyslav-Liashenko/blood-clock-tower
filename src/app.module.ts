@@ -4,7 +4,7 @@ import { UserModule } from './user/user.module';
 import { TelegramModule } from './telegram/telegram.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), UserModule, TelegramModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), UserModule, TelegramModule],
   controllers: [],
   providers: [],
 })
